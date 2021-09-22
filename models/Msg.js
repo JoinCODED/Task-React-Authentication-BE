@@ -9,4 +9,14 @@ const msgSchema = new Schema(
   },
   { timestamps: { createdAt: 'created_at' } }
 );
+// Duplicate the ID field.
+msgSchema.virtual('id').get(function () {
+  return this._id.toHexString();
+});
+
+// Ensure virtual fields are serialised.
+msgSchema.set('toJSON', {
+  virtuals: true,
+});
+
 module.exports = model('Msg', msgSchema);
