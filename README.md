@@ -1,28 +1,44 @@
 # TASK-NAME
 
-This is the template for tasks. These repos are the starting points and instructions for students to explore a concept.
+Authentication chat backend.
 
 ## Instructions
 
-Add instructions here. This is github flavoured markdown so you can be as creative as you want. Add code snippets, images, gifs, checkboxes, anything you want.
+```js
+Endpoints:
 
-### 1. Extract Components
+Signin:
+Endpoint: https://coded-task-axios-be.herokuapp.com/signin
+POST
+Data required: username,password
 
-- [ ] Look at the html in `index.html`
-- [ ] Move it into `App.js`
-- [ ] Do you see those cards? Can you turn them into a component??
+Signup:
+Endpoint: https://coded-task-axios-be.herokuapp.com/signup
+POST
+Data required: username,password
 
-It should look like this:
+Fetch all rooms:
+Endpoint: https://coded-task-axios-be.herokuapp.com/rooms
+GET
 
-![screenshot](https://tenor.com/xNjE.gif)
+Create a room:
+Endpoint: https://coded-task-axios-be.herokuapp.com/rooms
+Method: POST
+Data required: title,image,description
 
-### 2. Do the thing
+Update a room:
+Endpoint: https://coded-task-axios-be.herokuapp.com/rooms/${roomId}
+Method: PUT
+Data required: title,image,description
 
-Explanation of the thing and why we're about to do it. Cool right?
+Delete a room:
+Endpoint: https://coded-task-axios-be.herokuapp.com/rooms/${roomId}
+Method: Delete
 
-- [ ] Make a `store.js` file
-- [ ] Copy + Paste broken code:  
-  ```js
-  console.log("lol");
-  ```
-- [ ] Have an explanation ready for when Zainab interrogates you
+Create a msg:
+Endpoint: https://coded-task-axios-be.herokuapp.com/rooms/msg/${roomId}
+Method: POST
+Data required: msg
+
+
+```
