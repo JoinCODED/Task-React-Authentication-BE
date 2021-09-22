@@ -1,6 +1,6 @@
 let Room = require('../models/Room');
 let Msg = require('../models/Msg');
-
+let slugify = require('slugify');
 exports.getRooms = async (req, res, next) => {
   try {
     const rooms = await Room.find()
@@ -20,11 +20,11 @@ exports.getRooms = async (req, res, next) => {
 };
 
 exports.createRoom = async (req, res, next) => {
-  console.log('here');
   try {
     if (req.user) {
       req.body.author = req.user.id;
     }
+    req.body.slug = slugify(req.body.title);
     let newRoom = req.body;
     newRoom = await Room.create(newRoom);
     newRoom = await newRoom.populate('author');

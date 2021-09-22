@@ -14,6 +14,9 @@ const roomSchema = new Schema(
       type: String,
       required: true,
     },
+    slug: {
+      type: String,
+    },
     messages: [{ type: Schema.Types.ObjectId, ref: 'Msg' }],
   },
   { timestamps: { createdAt: 'created_at' } }
